@@ -7,7 +7,8 @@ RSpec.describe ShortUrl, type: :model do
     let(:short_url) { ShortUrl.create(full_url: "https://www.beenverified.com/faq/") }
 
     it "finds a short_url with the short_code" do
-      expect(ShortUrl.find_by_short_code(short_url.short_code)).to eq short_url
+      short_code = short_url.short_code
+      expect(ShortUrl.find(ShortUrl.decode(short_code))).to eq short_url
     end
 
   end
