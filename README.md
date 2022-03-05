@@ -30,3 +30,5 @@
 # Checking your short URL redirect
 
     curl -I localhost:3000/abc
+
+# The Algorithm used to shorten the url is base62 encoding scheme. It used to convert binary to text. The decoding of encoded text also possible.
